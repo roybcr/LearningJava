@@ -1,7 +1,7 @@
 
 /**
  * BMICalculator Class 
- * A class that calculates the Body Mass Index (BMI) of a person.
+ * A program that calculates the Body Mass Index (BMI) of a person.
  * @author (Roy Bachar) 
  * @version (0.0.1)
  */
