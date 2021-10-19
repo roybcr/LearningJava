@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Animals
+comment0.text=\n\ Animals\ Class\ \n\ A\ class\ that\ prints\ different\ animals\ using\ the\ System\ class.\n\ @author\ (Roy\ Bachar)\n\ @version\ (0.0.1)\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
