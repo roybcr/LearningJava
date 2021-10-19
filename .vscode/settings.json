@@ -2,6 +2,7 @@
   "java.project.sourcePaths": [
     "Units/Unit-2/Rectangle",
     "Units/Unit-2/BMICalculator",
+    "Units/Unit-2/ThreeDigit",
     "Units/Unit-1/Animals"
   ]
 }
