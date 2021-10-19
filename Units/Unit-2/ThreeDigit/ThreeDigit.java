@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class ThreeDigit {
     public static void main(String[] args) {
-
         int num;
         Scanner scan = new Scanner(System.in);
 

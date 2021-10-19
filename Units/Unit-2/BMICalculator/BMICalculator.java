@@ -10,8 +10,7 @@ import java.util.Scanner;
 
 public class BMICalculator {
   public static void main(String[] args) {
-    double weight;
-    double height;
+    double weight, height;
 
     Scanner scan = new Scanner(System.in);
     System.out.println("This program calculates the Body Mass Index (BMI) of a person.");
