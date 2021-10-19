@@ -1,7 +1,7 @@
  
 /**
  * Animals Class 
- * A class that prints different animals using the System class.
+ * A program that prints different animal names using the System class.
  * @author (Roy Bachar)
  * @version (0.0.1)
  */
