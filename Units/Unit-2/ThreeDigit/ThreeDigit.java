@@ -1,6 +1,6 @@
 
 /**
- * This program takes a 3-digit number and prints ou each digit starts from the units,
+ * This program takes a 3-digit number and prints out each digit starts from the units,
  * in a seperate line.
  * @author (Roy Bachar)
  * @version (0.0.1)
