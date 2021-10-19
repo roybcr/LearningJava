@@ -26,6 +26,7 @@ public class Rectangle {
         width = scan.nextDouble();
         System.out.println("Please enter the height: ");
         height = scan.nextDouble();
+        scan.close();
 
         // Calculation section
         perimeter = 2 * (width + height);
@@ -33,6 +34,5 @@ public class Rectangle {
         System.out.println("The Perimeter is: " + perimeter);
         System.out.println("The Area is: " + area);
 
-        scan.close();
     }
 }
