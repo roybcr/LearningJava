@@ -1,10 +1,11 @@
 {
   "java.project.sourcePaths": [
+    "Units/Unit-2/ThreeDigit",
+    "Units/Unit-2/Rectangle",
     "Units/Unit-2/NetSalary",
     "Units/Unit-2/IsSquare",
-    "Units/Unit-2/Rectangle",
     "Units/Unit-2/BMICalculator",
-    "Units/Unit-2/ThreeDigit",
-    "Units/Unit-1/Animals"
+    "Units/Unit-1/Animals",
+    "Code/M11"
   ]
 }
