@@ -9,21 +9,30 @@ import java.util.Scanner;
 
 public class NetSalary {
     public static void main(String[] args) {
-        int salary, age;
-        Scanner scanner = new Scanner(System.in);
+        final int ADULT = 18, SENIOR = 67;
+        final int BONUS = 200, HEALTH_TAX = 100;
         
+        int age;
+        double salary;
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter your age :");
         age = scanner.nextInt();
         
         System.out.println("Enter your salary :");
-        salary = scanner.nextInt();
-    
+        salary = scanner.nextDouble();
+
         scanner.close();
-        
-        if(age < 67 && age > 18)
-            System.out.println("a 100$ Health tax was deducted from your salary. \n\r Your new salary is now: " + (salary - 100));
-        else System.out.println("a 200$ Bonus was added to your salary. \n\r Your new salary is now: " + (salary + 200));
-        
-        
+
+        if (age >= ADULT && age <= SENIOR) {
+            salary -= HEALTH_TAX;
+            System.out.println("a " + HEALTH_TAX
+                    + "$ Health tax was deducted from your salary. \n\r Your new salary is now: " + "$" + salary);
+        } else {
+            salary += BONUS;
+            System.out.println(
+                    "a " + BONUS + "$ Bonus was added to your salary. \n\r Your new salary is now: " + "$" + salary);
+        }
+
     }
 }
