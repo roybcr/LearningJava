@@ -1,5 +1,6 @@
 {
   "java.project.sourcePaths": [
+    "Units/Unit-2/Switch",
     "Units/Unit-2/ThreeDigit",
     "Units/Unit-2/Rectangle",
     "Units/Unit-2/NetSalary",
