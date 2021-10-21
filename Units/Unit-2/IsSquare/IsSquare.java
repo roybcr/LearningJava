@@ -1,4 +1,3 @@
-
 /**
  * This program takes 4 side lengths of a rectangle and checks if it's a square or not.
  * @author (Roy Bachar)
@@ -13,7 +12,6 @@ public class IsSquare {
         boolean isSquare = true;
         int sideNumber = 0;
         double sideLength;
-
         Scanner scanner = new Scanner(System.in);
 
         guideUser(sideNumber++);
@@ -26,14 +24,13 @@ public class IsSquare {
                 break;
             }
         }
-        
-        // Avoid memory leaks
+
         scanner.close();
-        
         System.out.println(isSquare ? "Square!" : "Not square!");
     }
 
     private static void guideUser(int sideNumber) {
-        System.out.println("Enter the length of side number " +  ++sideNumber + ":");
+        System.out.println("Enter the length of side number " +  
+        ++sideNumber + ":");
     }
 }

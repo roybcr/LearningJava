@@ -12,12 +12,10 @@ public class ThreeDigit {
     public static void main(String[] args) {
         int num;
         Scanner scan = new Scanner(System.in);
-
-        System.out.println("Given a 3 digit number,This program prints each digit starts from the units, in a seperate line.");
-        
+    
         System.out.println("Please enter a three-digit number: ");
-        num = scan.nextInt();
-        
+    
+        num = scan.nextInt();    
         scan.close();
 
         System.out.println(num % 10); // Units

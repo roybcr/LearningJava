@@ -1,4 +1,3 @@
-
 /**
  * BMICalculator Class 
  * A program that calculates the Body Mass Index (BMI) of a person.
@@ -13,9 +12,6 @@ public class BMICalculator {
     double weight, height;
     Scanner scan = new Scanner(System.in);
 
-    System.out.println("This program calculates the Body Mass Index (BMI) of a person.");
-
-    // Getting data from the user
     System.out.println("Please enter your weight: ");
     weight = scan.nextDouble();
 

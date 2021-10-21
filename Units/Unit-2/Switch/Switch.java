@@ -7,14 +7,12 @@
 import java.util.Scanner;
 
 public class Switch {
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) {        
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("This program demonstrates the usage in Switch Case Statement.");
-        System.out.println("Please enter an integer of your choice");
+        System.out.println("Please Enter an Integer of your Choice: ");
+        
         int num = scan.nextInt();
-
         scan.close();
 
         switch (num) {

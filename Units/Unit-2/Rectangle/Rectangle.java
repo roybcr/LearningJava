@@ -12,14 +12,11 @@ public class Rectangle {
     public static void main(String[] args) {
         double width, height, perimeter, area;
         Scanner scan = new Scanner(System.in);
-
-        System.out.println("This program calculates the perimeter and area of a rectangle.");
-
-        // Getting data from the user
-        System.out.println("Please enter the width: ");
+        
+        System.out.println("Please Enter the Width: ");
         width = scan.nextDouble();
 
-        System.out.println("Please enter the height: ");
+        System.out.println("Please Enter the Height: ");
         height = scan.nextDouble();
 
         scan.close();
