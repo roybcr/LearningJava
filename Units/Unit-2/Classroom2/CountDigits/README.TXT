@@ -1,7 +1,8 @@
 ------------------------------------------------------------------------
-This program determines whether an Integer is Positive and Even or not.
+This program checks how many digits a number has, 
+then prints each by order.
 ------------------------------------------------------------------------
 
 PROJECT TITLE: Interactive programs & classes
-PURPOSE OF PROJECT: Exercise 2.7.3
-VERSION or DATE: 21.10.21
+PURPOSE OF PROJECT: Classroom Exercise
+VERSION or DATE: 24.10.21
