@@ -10,23 +10,26 @@ import java.util.Scanner;
 
 public class CountDigits {
     public static void main(String[] args) {
-        final byte TWO_DIGITS = 10, ONE_DIG = 1;
+        final byte ONE_DIG = 1;
         final short THREE_DIGITS = 999;
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter a number");
-        int num = scan.nextInt();
+        short num = scan.nextShort();
         scan.close();
+        
+        short units = (short)(num % 10);
+        short tens = (short)(num / 10);
+        short hundreds = (short)(num / 100);
 
-        // Check if a number has more than 3 digits
-        if (num / 100 > THREE_DIGITS) {
+        if (num > THREE_DIGITS) {
             System.out.println("illegal number");
-        } else if (num / 10 > TWO_DIGITS) {
-            System.out.println("Three Digits " + num % 10 + " " + (num / 10) % 10 + " " + num / 100);
 
-        } else if (num / 10 > ONE_DIG) {
+        } else if (hundreds > ONE_DIG) {
+            System.out.println("Three Digits " + units + " " + tens % 10 + " " + hundreds);
 
-            System.out.println("Two Digits " + num % 10 + " " + (num / 10) % 10);
+        } else if (tens > ONE_DIG) {
+            System.out.println("Two Digits " + units + " " + tens % 10);
 
         } else {
             System.out.println("One Digit " + num);
