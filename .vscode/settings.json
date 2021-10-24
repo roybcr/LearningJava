@@ -1,5 +1,6 @@
 {
   "java.project.sourcePaths": [
+    "Units/Unit-2/Classroom2/Tri",
     "Units/Unit-2/Classroom2/CountDigits",
     "Units/Unit-2/NegativeOdd",
     "Units/Unit-2/Ternary",
