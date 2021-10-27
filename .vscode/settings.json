@@ -1,6 +1,7 @@
 {
   "java.project.sourcePaths": [
     "Lab/BinarySearch",
+    "Units/Unit-2/Summary/Coordinates",
     "Units/Unit-2/Summary/Termometer",
     "Units/Unit-2/Summary/TuitionCalc",
     "Units/Unit-2/SpecialChars",
