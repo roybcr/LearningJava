@@ -1,6 +1,11 @@
 {
   "java.project.sourcePaths": [
     "Lab/BinarySearch",
+    "Units/Unit-2/Summary/Termometer",
+    "Units/Unit-2/Summary/TuitionCalc",
+    "Units/Unit-2/SpecialChars",
+    "Units/Unit-2/Coins",
+    "Units/Unit-2/Numbers",
     "Units/Unit-2/Classroom2/Tri",
     "Units/Unit-2/Classroom2/CountDigits",
     "Units/Unit-2/NegativeOdd",
@@ -12,6 +17,8 @@
     "Units/Unit-2/IsSquare",
     "Units/Unit-2/BMICalculator",
     "Units/Unit-1/Animals",
-    "Code/M11"
-  ]
+    "Code/M11",
+    "Code/M11/Einstein/Einstein"
+  ],
+  "java.format.settings.url": "eclipse-formatter.xml"
 }
