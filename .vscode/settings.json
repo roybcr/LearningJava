@@ -18,7 +18,7 @@
     "Units/Unit-2/IsSquare",
     "Units/Unit-2/BMICalculator",
     "Units/Unit-1/Animals",
-    "Code/M11",
+    "Code/M11/Milliseconds/",
     "Code/M11/Einstein/Einstein"
   ],
   "java.format.settings.url": "eclipse-formatter.xml"
