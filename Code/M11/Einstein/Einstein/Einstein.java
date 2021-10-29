@@ -74,7 +74,6 @@ public class Einstein {
 
                     System.out.println("Difference: " + difference);
                     System.out.println("Reversed difference: " + reversedDiff);
-                    
                     System.out.println("SUCCEEDED");
 
                 } else {
