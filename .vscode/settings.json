@@ -20,7 +20,10 @@
     "Units/Unit-1/Animals",
     "Code/M11/Milliseconds/",
     "Code/M11/Einstein/Einstein",
-    "Units/Unit-4/Point"
+    "Units/Unit-4/Point",
+    "Units/Unit-4/Email/Main",
+    "Units/Unit-4/Email/Main/Date",
+    "Units/Unit-4/Email/Main/Message"
   ],
   "java.format.settings.url": "eclipse-formatter.xml"
 }
