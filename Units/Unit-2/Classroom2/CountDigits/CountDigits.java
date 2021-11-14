@@ -25,11 +25,11 @@ public class CountDigits {
         if (num > THREE_DIGITS) {
             System.out.println("illegal number");
 
-        } else if (hundreds > ONE_DIG) {
-            System.out.println("Three Digits " + units + " " + tens % 10 + " " + hundreds);
+        } else if (hundreds >= ONE_DIG) {
+            System.out.println("Three Digits " + hundreds +  " " + tens % 10 + " " + units);
 
-        } else if (tens > ONE_DIG) {
-            System.out.println("Two Digits " + units + " " + tens % 10);
+        } else if (tens >= ONE_DIG) {
+            System.out.println("Two Digits " + tens % 10 + " " + units);
 
         } else {
             System.out.println("One Digit " + num);
