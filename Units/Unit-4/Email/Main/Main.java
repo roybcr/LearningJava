@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-
+        
         Date date = new Date(2, 12, 1997);
         Date date2 = new Date(2, 12, 1997);
         Date date3 = new Date(1, 1, 1780);
