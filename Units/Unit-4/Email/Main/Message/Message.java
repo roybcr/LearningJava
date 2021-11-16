@@ -36,7 +36,7 @@ public class Message {
     }
 
     public Date getDate() {
-        return _dateReceived;
+        return new Date(_dateReceived);
     }
 
     public void setEmail(String email) {
