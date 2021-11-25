@@ -22,7 +22,9 @@
     "Code/M11/Einstein/Einstein",
     "Units/Unit-4/Email/Main",
     "Units/Unit-4/Email/Main/Date",
-    "Units/Unit-4/Email/Main/Message"
+    "Units/Unit-4/Email/Main/Message",
+    "Units/Unit-5/Fibonacci",
+    "Code/MMM12"
   ],
   "java.format.settings.url": "eclipse-formatter.xml"
 }
