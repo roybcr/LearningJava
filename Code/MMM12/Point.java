@@ -6,138 +6,167 @@
  */
 
 public class Point {
-    private int x;
-    private int y;
 
+  private int x;
+  private int y;
 
-    /*  ---------- Constructors ---------- */
-    
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+  /**
+   * Contruct a Point.
+   *
+   * @param x The x coordinate
+   * @param y The y coordinate
+   */
 
-    public Point(Point other) {
-        this(other.getX(), other.getY());
-    }
+  public Point(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
 
+  /**
+   * Copy constructor for Point. Construct a Point with the same coordinates as
+   * other Point.
+   *
+   * @param other The Point object from which to construct the new Point
+   */
 
-    /*  ---------- Getters & Setters ---------- */
+  public Point(Point other) {
+    this(other.getX(), other.getY());
+  }
 
-    public int getX() {
-        return this.x;
-    }
+  /**
+   * Returns the x coordinate of the Point.
+   *
+   * @return The x coordinate of this Point
+   */
 
-    public int getY() {
-        return this.y;
-    }
+  public int getX() {
+    return this.x;
+  }
 
-    public void setX(int x) {
-        this.x = x;
-    }
+  /**
+   * Returns the y coordinate of the Point.
+   *
+   * @return The y coordinate of this Point
+   */
 
-    public void setY(int y) {
-        this.y = y;
-    }
+  public int getY() {
+    return this.y;
+  }
 
+  /**
+   * Sets the x coordinate of this Point.
+   *
+   * @param The new x coordinate to set
+   */
 
-    /**
-     * Check if this Point is equal to the given Point.
-     * 
-     * @param other the Point to compare with
-     * @return true if the coordinates are equal, 
-     *         false otherwise.
-     */
+  public void setX(int x) {
+    this.x = x;
+  }
 
-    public boolean equals(Point other) {
-        return other.getX() == this.getX() && other.getY() == this.getY();
-    }
+  /**
+   * Sets the y coordinate of this Point.
+   *
+   * @param The new y coordinate to set
+   */
 
-    /**
-     * Check if this Point is positioned above the given Point.
-     * 
-     * @param other the Point to compare with
-     * @return true if this y value is greater than the y value of the given Point,
-     *         false otherwise.
-     */
+  public void setY(int y) {
+    this.y = y;
+  }
 
-    public boolean isAbove(Point other) {
-        return this.getY() > other.getY();
-    }
+  /**
+   * Check if this Point is equal to the given Point.
+   *
+   * @param other The Point to be compare with this Point
+   * @return true if the coordinates are equal
+   */
 
-    /**
-     * Check if this Point is positioned below the given Point.
-     * 
-     * @param other the Point to compare with
-     * @return true if the given point is above this Point, 
-     *         false otherwise.
-     */
+  public boolean equals(Point other) {
+    return other.getX() == this.x && other.getY() == this.y;
+  }
 
-    public boolean isUnder(Point other) {
-        return other.isAbove(this);
-    }
+  /**
+   * Check if this Point is above the given Point.
+   *
+   * @param other The Point to compare with
+   * @return true if this y value is greater than the y value of the given Point
+   */
 
-    /**
-     * Check if this Point is positioned on the left of the given Point.
-     * 
-     * @param other the Point to check against
-     * @return true if this x value is smaller than the x value of the given Point, 
-     *         false otherwise.
-     */
+  public boolean isAbove(Point other) {
+    return this.y > other.getY();
+  }
 
-    public boolean isLeft(Point other) {
-        return this.getX() < other.getX();
-    }
+  /**
+   * Check if this Point is below the given Point.
+   *
+   * @param other The Point to compare with
+   * @return true if the given point is above this Point
+   */
 
-    /**
-     * Check if this Point is positioned to the right of the given Point.
-     * 
-     * @param other the Point to check against
-     * @return true if given Point is positioned to the left of this Point, 
-     *         false otherwise.
-     */
+  public boolean isUnder(Point other) {
+    return other.isAbove(this);
+  }
 
-    public boolean isRight(Point other) {
-        return other.isLeft(this);
-    }
+  /**
+   * Check if this Point is to the left of the given Point.
+   *
+   * @param other The Point to check against
+   * @return true if this Point is to the left of the given Point
+   */
 
-    /**
-     * Moves a Point by the provided values.
-     * 
-     * @param deltaX the difference to add to x
-     * @param deltaY the difference to add to y
-     */
+  public boolean isLeft(Point other) {
+    return this.x < other.getX();
+  }
 
-    public void move(int deltaX, int deltaY) {
-        int newX = this.getX() + deltaX;
-        int newY = this.getY() + deltaY;
-        
-        this.setX(newX);
-        this.setY(newY);
-    }
+  /**
+   * Check if this Point is to the right of the given Point.
+   *
+   * @param other The Point to check against
+   * @return true if this Point is to the right of the given Point
+   */
 
-    /**
-     * Calculate the distance between this Point to the given Point.
-     * 
-     * @param other the Point to calculate the distance to
-     * @return the distance.
-     */
+  public boolean isRight(Point other) {
+    return other.isLeft(this);
+  }
 
-    public double distance(Point other) {
-        int xDiff = this.getX() - other.getX();
-        int yDiff = this.getY() - other.getY();
-        double xDiffPow = Math.pow(xDiff, 2);
-        double yDiffPow = Math.pow(yDiff, 2);
+  /**
+   * Moves the x coordinate by deltaX and the y coordinate by deltaY.
+   *
+   * @param deltaX The amount to move in the x direction
+   * @param deltaY The amount to move in the y direction
+   */
 
-        return Math.sqrt(xDiffPow + yDiffPow);
-    }
+  public void move(int deltaX, int deltaY) {
+    int newX = this.x + deltaX;
+    int newY = this.y + deltaY;
 
-    /**
-     * @return a string representation of a Point in the format (x,y).
-     */
+    this.setX(newX);
+    this.setY(newY);
+  }
 
-    public String toString() {
-        return "(" + this.getX() + "," + this.getY() + ")";
-    }
+  /**
+   * Returns the distance between this Point to the given Point.
+   *
+   * @param other The Point to calculate the distance to
+   * @return The distane from this Point to the given Point
+   */
 
+  public double distance(Point other) {
+    int xDist = this.x - other.getX();
+    int yDist = this.y - other.getY();
+
+    double xDistPow = Math.pow(xDist, 2);
+    double yDistPow = Math.pow(yDist, 2);
+
+    return Math.sqrt(xDistPow + yDistPow);
+  }
+
+  /**
+   * Returns a string representation of this Point.
+   *
+   * @return A string representation of a Point in the format (x,y)
+   */
+
+  public String toString() {
+    return "(" + this.x + "," + this.y + ")";
+  }
 }

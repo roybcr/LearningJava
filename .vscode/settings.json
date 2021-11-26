@@ -26,5 +26,6 @@
     "Units/Unit-5/Fibonacci",
     "Code/MMM12"
   ],
-  "java.format.settings.url": "eclipse-formatter.xml"
+  "java.format.settings.url": "eclipse-formatter.xml",
+  "todo-tree.tree.showBadges": true
 }
