@@ -9,57 +9,37 @@ public class Point {
     private int x;
     private int y;
 
-    /**
-     * Constructs a new Point on the specified x,y coordinates.
-     * 
-     * @param x the x coordinate
-     * @param y the y coordinate
-     */
 
+    /*  ---------- Constructors ---------- */
+    
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    /**
-     * Copy constructor.
-     */
-
     public Point(Point other) {
         this(other.getX(), other.getY());
     }
 
-    /**
-     * @return the x coordinate of this Point.
-     */
+
+    /*  ---------- Getters & Setters ---------- */
 
     public int getX() {
         return this.x;
     }
 
-    /**
-     * @return the y coordinate of this Point.
-     */
-
     public int getY() {
         return this.y;
     }
-
-    /**
-     * Set a new x value for this Point.
-     */
 
     public void setX(int x) {
         this.x = x;
     }
 
-    /**
-     * Set a new y value for this Point.
-     */
-
     public void setY(int y) {
         this.y = y;
     }
+
 
     /**
      * Check if this Point is equal to the given Point.
