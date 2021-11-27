@@ -101,7 +101,7 @@ public class Point {
   /**
    * Checks if this Point is below the given Point.
    *
-   * @param other The Point to compare with
+   * @param other The Point to compare to
    * @return true if the given point is above this Point
    */
 
