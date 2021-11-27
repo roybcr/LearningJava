@@ -1,5 +1,6 @@
 /**
- * RectangleA is a class that represents an Axis-aligned rectangle on the Coordinate Plane.
+ * RectangleA is a class that represents an Axis-aligned rectangle on the
+ * Coordinate Plane.
  *
  * @author Roy Bachar
  * @version 1.0 (25. Nov 2021)
@@ -26,9 +27,10 @@ public class RectangleA {
 
   /**
    * Constructs a new Rectangle with the specified width, height,
-   * and a Point object that represents the coordinates of its South-Western vertex.
-   * Checks if the accepted width and height are positive and if not, assigns their values
-   * to be 1.
+   * and a Point object that represents the coordinates of its South-Western
+   * vertex.
+   * Checks if the accepted width and height are positive and if not, assigns
+   * their values to be 1.
    *
    * @param p      The South-Western vertex of the rectangle
    * @param width  The width of the rectangle
@@ -45,14 +47,12 @@ public class RectangleA {
    * Constructs a new Rectangle with the specified
    * South-West and North-East vertices.
    *
-   * @param sw  The South-Western vertex of the rectangle
-   * @param ne  The North-Eeastern vertex of the rectangle
+   * @param sw The South-Western vertex of the rectangle
+   * @param ne The North-Eastern vertex of the rectangle
    */
 
   public RectangleA(Point sw, Point ne) {
-    this.height = Math.abs(ne.getY() - sw.getY());
-    this.width = Math.abs(ne.getX() - sw.getX());
-    this.pointSW = new Point(sw);
+    this(sw, ne.getX() - sw.getX(), ne.getY() - sw.getY());
   }
 
   /**
@@ -63,9 +63,7 @@ public class RectangleA {
    */
 
   public RectangleA(RectangleA r) {
-    this.width = r.getWidth();
-    this.height = r.getHeight();
-    this.pointSW = new Point(r.getPointSW());
+    this(r.getPointSW(), r.getWidth(), r.getHeight());
   }
 
   /**
@@ -132,36 +130,80 @@ public class RectangleA {
     this.pointSW = new Point(p);
   }
 
-
-
+  /**
+   * Calculates the perimeter of the rectangle.
+   *
+   * @return The perimeter of the rectangle.
+   */
 
   public int getPerimeter() {
     return (this.width + this.height) * 2;
   }
 
+  /**
+   * Calculates the area of the rectangle.
+   *
+   * @return The area of the rectangle.
+   */
+
   public int getArea() {
     return this.width * this.height;
   }
+
+  /**
+   * Moves the x coordinate of the South-Western vertex by deltaX and the y
+   * coordinate by deltaY.
+   *
+   * @param deltaX The amount to move the current S-W vertex along the X axis
+   * @param deltaY The amount to move the current S-W vertex along the Y axis
+   */
 
   public void move(int deltaX, int deltaY) {
     this.pointSW.move(deltaX, deltaY);
   }
 
-  public boolean equals(RectangleA r) {
+  /**
+   * Checks if two rectangles are equal.
+   *
+   * @param other The Rectangle to compare to
+   * @return true If the given rectangle is equal to this rectangle
+   */
+
+  public boolean equals(RectangleA other) {
     return (
-      this.width == r.getWidth() &&
-      this.height == r.getHeight() &&
-      this.pointSW.equals(r.getPointSW())
+      this.width == other.getWidth() &&
+      this.height == other.getHeight() &&
+      this.pointSW.equals(other.getPointSW())
     );
   }
+
+  /**
+   * Calculates the diagonal of the rectangle.
+   *
+   * @return The diagonal length of this rectangle
+   */
 
   public double getDiagonalLength() {
     return this.pointSW.distance(this.getPointNE());
   }
 
+  /**
+   * Checks if the area of this rectangle is larger than the area of the given
+   * rectangle.
+   *
+   * @param other The Rectangle to compare to
+   * @return true If the given rectangle is equal to this rectangle
+   */
+
   public boolean isLarger(RectangleA other) {
     return this.getArea() > other.getArea();
   }
+
+  /**
+   * Returns the North-Eastern vertex of the rectangle.
+   *
+   * @return The North-Eastern vertex of the rectangle
+   */
 
   public Point getPointNE() {
     return new Point(
@@ -170,11 +212,22 @@ public class RectangleA {
     );
   }
 
+  /**
+   * Switches between the width and the height of the rectangle.
+   */
+
   public void changeSides() {
     int temp = this.width;
     this.setWidth(this.height);
     this.setHeight(temp);
   }
+
+  /**
+   * Returns true if this rectangle is inside the given rectangle
+   *
+   * @param r The rectangle to check with
+   * @return true If this rectangle is inside the given rectangle
+   */
 
   public boolean isIn(RectangleA r) {
     Point pointNE = this.getPointNE();
@@ -187,6 +240,14 @@ public class RectangleA {
     );
   }
 
+  /**
+   * Returns true if this rectangle is overlaps with the given rectangle
+   *
+   * @param r The rectangle to check with
+   * @return true If this rectangle overlaps with the given rectangle, false
+   *         otherwise
+   */
+
   public boolean overlap(RectangleA r) {
     if (
       this.getPointNE().isLeft(r.getPointSW()) ||
@@ -196,17 +257,25 @@ public class RectangleA {
       this.getPointNE().isUnder(r.getPointSW()) ||
       r.getPointNE().isUnder(this.pointSW)
     ) return false;
+
     return true;
   }
-
 
   /**
    * Returns a string representation of this rectangle.
    *
-   * @return A string representation of RectangleA in the format: Width=w Height=h PointSW=(x, y)
+   * @return A string representation of RectangleA in the format:
+   * Width=w Height=h PointSW=(x, y)
    */
 
   public String toString() {
-    return ("Width=" + this.width + " Height=" + this.height + " PointSW" + this.pointSW);
+    return (
+      "Width=" +
+      this.width +
+      " Height=" +
+      this.height +
+      " PointSW" +
+      this.pointSW
+    );
   }
 }

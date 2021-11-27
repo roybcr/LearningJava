@@ -5,7 +5,7 @@
  * @version 0.0.1
  */
 
-public class RectangleATester {
+public class RectangleBTester {
 
   public static double pythagorean(double a, double b) {
     return Math.sqrt(a * a + b * b);
