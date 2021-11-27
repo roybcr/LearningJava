@@ -8,7 +8,7 @@
 
 public class RectangleB {
 
-  final byte DEFAULT_SIDE_LENGTH = 1, MIN_SIDE_LENGTH = 0, ZERO_MOVE = 0;
+  final byte DEFAULT_SIDE_LENGTH = 1, MIN_SIDE_LENGTH = 0;
   private Point pointSW;
   private Point pointNE;
 
@@ -276,7 +276,7 @@ public class RectangleB {
       this.getWidth() +
       " Height=" +
       this.getHeight() +
-      " PointSW" +
+      " PointSW=" +
       this.pointSW
     );
   }

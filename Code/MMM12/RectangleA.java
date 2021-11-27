@@ -274,7 +274,7 @@ public class RectangleA {
       this.width +
       " Height=" +
       this.height +
-      " PointSW" +
+      " PointSW=" +
       this.pointSW
     );
   }
