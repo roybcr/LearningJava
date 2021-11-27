@@ -95,7 +95,8 @@ public class RectangleA {
     }
 
     public void setPointSW(Point p) {
-        this.pointSW = new Point(p);
+        this.pointSW.setX(p.getX());
+        this.pointSW.setY(p.getY());
     }
 
     // ===== Class methods ===== //
@@ -117,8 +118,7 @@ public class RectangleA {
     }
 
     public double getDiagonalLength() {
-        double diagonalPow = ((Math.pow(this.height, 2) + Math.pow(this.width, 2)));
-        return Math.sqrt(diagonalPow);
+        return this.pointSW.distance(this.getPointNE());
     }
 
     public boolean isLarger(RectangleA other) {
@@ -126,9 +126,9 @@ public class RectangleA {
     }
 
     public Point getPointNE() {
-        Point ne = new Point(this.pointSW);
-        ne.move(this.width, this.height);
-        return ne;
+
+        return new Point(this.pointSW.getX() + this.width, this.pointSW.getY() + this.height);
+        
     }
 
     public void changeSides() {
