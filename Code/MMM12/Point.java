@@ -7,11 +7,14 @@
 
 public class Point {
 
+  // ORIGIN_VAL is a static constant that represents the origin (0,0).
+  static final byte ORIGIN_VAL = 0;
+
   private int x;
   private int y;
 
   /**
-   * Contruct a Point.
+   * Contructs a Point object with the given x and y coordinates.
    *
    * @param x The x coordinate
    * @param y The y coordinate
@@ -23,8 +26,8 @@ public class Point {
   }
 
   /**
-   * Copy constructor for Point. Construct a Point with the same coordinates as
-   * other Point.
+   * Copy constructor for Point.
+   * Constructs a new Point with the coordinates from the given Point.
    *
    * @param other The Point object from which to construct the new Point
    */
@@ -54,27 +57,27 @@ public class Point {
   }
 
   /**
-   * Sets the x coordinate of this Point.
+   * Sets the x coordinate of the Point.
    *
-   * @param The new x coordinate to set
+   * @param num A new value for the X coordinate
    */
 
-  public void setX(int x) {
-    this.x = x;
+  public void setX(int num) {
+    this.x = num;
   }
 
   /**
-   * Sets the y coordinate of this Point.
+   * Sets the y coordinate of the Point.
    *
-   * @param The new y coordinate to set
+   * @param num A new value for the Y coordinate
    */
 
-  public void setY(int y) {
-    this.y = y;
+  public void setY(int num) {
+    this.y = num;
   }
 
   /**
-   * Check if this Point is equal to the given Point.
+   * Checks if two points are equal.
    *
    * @param other The Point to be compare with this Point
    * @return true if the coordinates are equal
@@ -85,7 +88,7 @@ public class Point {
   }
 
   /**
-   * Check if this Point is above the given Point.
+   * Checks if this Point is above the given Point.
    *
    * @param other The Point to compare with
    * @return true if this y value is greater than the y value of the given Point
@@ -96,7 +99,7 @@ public class Point {
   }
 
   /**
-   * Check if this Point is below the given Point.
+   * Checks if this Point is below the given Point.
    *
    * @param other The Point to compare with
    * @return true if the given point is above this Point
@@ -107,7 +110,7 @@ public class Point {
   }
 
   /**
-   * Check if this Point is to the left of the given Point.
+   * Checks if this Point is on the left of the given Point.
    *
    * @param other The Point to check against
    * @return true if this Point is to the left of the given Point
@@ -118,7 +121,7 @@ public class Point {
   }
 
   /**
-   * Check if this Point is to the right of the given Point.
+   * Checks if this Point is on the right of the given Point.
    *
    * @param other The Point to check against
    * @return true if this Point is to the right of the given Point
@@ -131,8 +134,8 @@ public class Point {
   /**
    * Moves the x coordinate by deltaX and the y coordinate by deltaY.
    *
-   * @param deltaX The amount to move in the x direction
-   * @param deltaY The amount to move in the y direction
+   * @param deltaX The amount to move the current point along the X axis
+   * @param deltaY The amount to move the current point along the Y axis
    */
 
   public void move(int deltaX, int deltaY) {
@@ -146,13 +149,13 @@ public class Point {
   /**
    * Returns the distance between this Point to the given Point.
    *
-   * @param other The Point to calculate the distance to
+   * @param p The Point to calculate the distance to
    * @return The distane from this Point to the given Point
    */
 
-  public double distance(Point other) {
-    int xDist = this.x - other.getX();
-    int yDist = this.y - other.getY();
+  public double distance(Point p) {
+    int xDist = this.x - p.getX();
+    int yDist = this.y - p.getY();
 
     double xDistPow = Math.pow(xDist, 2);
     double yDistPow = Math.pow(yDist, 2);
@@ -163,7 +166,7 @@ public class Point {
   /**
    * Returns a string representation of this Point.
    *
-   * @return A string representation of a Point in the format (x,y)
+   * @return A string representation of a Point in the format: (x,y)
    */
 
   public String toString() {

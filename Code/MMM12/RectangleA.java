@@ -1,6 +1,5 @@
 /**
- * RectangleA is a class that represents a rectangle whose sides parallel to the
- * x and y axes.
+ * RectangleA is a class that represents an Axis-aligned rectangle on the Coordinate Plane.
  *
  * @author Roy Bachar
  * @version 1.0 (25. Nov 2021)
@@ -8,153 +7,206 @@
 
 public class RectangleA {
 
-    static final byte ORIGIN = 0;
-    final byte DEFAULT_SIDE_LENGTH = 1, MIN_SIDE_LENGTH = 0;
-    private int width;
-    private int height;
-    private Point pointSW;
+  final byte DEFAULT_SIDE_LENGTH = 1, MIN_SIDE_LENGTH = 0;
+  private int width;
+  private int height;
+  private Point pointSW;
 
-    /**
-     * Constructs a new RectangleA with the specified width and height, and position
-     * its bottom left point on the origin.
-     *
-     * @param width  the width of the rectangle
-     * @param height the height of the rectangle
-     */
+  /**
+   * Constructs a new Rectangle with the specified width and height,
+   * and South-Western vertex on (0,0).
+   *
+   * @param w The width of the rectangle
+   * @param h The height of the rectangle
+   */
 
-    // ====== Constructor No. 1 ====== //
+  public RectangleA(int w, int h) {
+    this(new Point(Point.ORIGIN_VAL, Point.ORIGIN_VAL), w, h);
+  }
 
-    public RectangleA(int w, int h) {
-        this(new Point(ORIGIN, ORIGIN), w, h);
-    }
+  /**
+   * Constructs a new Rectangle with the specified width, height,
+   * and a Point object that represents the coordinates of its South-Western vertex.
+   * Checks if the accepted width and height are positive and if not, assigns their values
+   * to be 1.
+   *
+   * @param p      The South-Western vertex of the rectangle
+   * @param width  The width of the rectangle
+   * @param height The height of the rectangle
+   */
 
-    /**
-     * Constructs a new RectangleA with the specified Point, width and height.
-     * Checks if the width and height are positive and if not, assigns their values
-     * to the default.
-     *
-     * @param p      the bottom left point of the rectangle
-     * @param width  the width of the rectangle
-     * @param height the height of the rectangle
-     */
+  public RectangleA(Point p, int w, int h) {
+    this.width = w < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : w;
+    this.height = h < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : h;
+    this.pointSW = new Point(p);
+  }
 
-    // ====== Constructor No. 2 ====== //
+  /**
+   * Constructs a new Rectangle with the specified
+   * South-West and North-East vertices.
+   *
+   * @param sw  The South-Western vertex of the rectangle
+   * @param ne  The North-Eeastern vertex of the rectangle
+   */
 
-    public RectangleA(Point p, int w, int h) {
-        this.width = w < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : w;
-        this.height = h < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : h;
-        this.pointSW = new Point(p);
-    }
+  public RectangleA(Point sw, Point ne) {
+    this.height = Math.abs(ne.getY() - sw.getY());
+    this.width = Math.abs(ne.getX() - sw.getX());
+    this.pointSW = new Point(sw);
+  }
 
-    /**
-     * Calculates the width and height of the rectangle based on the NE and SW
-     * distances.
-     */
+  /**
+   * Copy constructor for RectangleA.
+   * Constructs a rectangle using another rectangle.
+   *
+   * @param r The rectangle from which to construct the new object
+   */
 
-    // ====== Constructor No. 3 ====== //
+  public RectangleA(RectangleA r) {
+    this.width = r.getWidth();
+    this.height = r.getHeight();
+    this.pointSW = new Point(r.getPointSW());
+  }
 
-    public RectangleA(Point sw, Point ne) {
-        Point pointSE = new Point(ne.getX(), sw.getY());
+  /**
+   * Returns the width of the rectangle.
+   *
+   * @return The width of the rectangle.
+   */
 
-        int horizontalDist = (int) (sw.distance(pointSE));
-        int verticalDist = (int) (pointSE.distance(ne));
+  public int getWidth() {
+    return this.width;
+  }
 
-        this.pointSW = new Point(sw);
-        this.width = horizontalDist < this.MIN_SIDE_LENGTH ? DEFAULT_SIDE_LENGTH : horizontalDist;
-        this.height = verticalDist < this.MIN_SIDE_LENGTH ? DEFAULT_SIDE_LENGTH : verticalDist;
-    }
+  /**
+   * Returns the height of the rectangle.
+   *
+   * @return The height of the rectangle.
+   */
 
-    // ====== Constructor No. 4 ====== //
+  public int getHeight() {
+    return this.height;
+  }
 
-    public RectangleA(RectangleA r) {
-        this(r.getPointSW(), r.getWidth(), r.getHeight());
-    }
+  /**
+   * Returns the South-Western vertex of the rectangle.
+   *
+   * @return The South-Western vertex of the rectangle
+   */
 
-    // ===== Getters and Setters ===== //
+  public Point getPointSW() {
+    return new Point(this.pointSW);
+  }
 
-    public int getWidth() {
-        return this.width;
-    }
+  /**
+   * Sets the width of the rectangle to the provided width
+   * only if the provided width is valid,
+   * otherwise, does nothing.
+   *
+   * @param w The width of the rectangle to set
+   */
 
-    public int getHeight() {
-        return this.height;
-    }
+  public void setWidth(int w) {
+    this.width = w < this.MIN_SIDE_LENGTH ? this.width : w;
+  }
 
-    public Point getPointSW() {
-        return new Point(this.pointSW);
-    }
+  /**
+   * Sets the height of the rectangle to the provided height
+   * only if the provided height is valid,
+   * otherwise, does nothing.
+   *
+   * @param h The height of the rectangle to set
+   */
 
-    public void setWidth(int w) {
-        if (!(w < this.MIN_SIDE_LENGTH))
-            this.width = w;
-    }
+  public void setHeight(int h) {
+    this.height = h < this.MIN_SIDE_LENGTH ? this.height : h;
+  }
 
-    public void setHeight(int h) {
-        if (!(h < this.MIN_SIDE_LENGTH))
-            this.height = h;
-    }
+  /**
+   * Sets the South-Western vertex of the rectangle to the provided point.
+   *
+   * @param p The South-Western vertex of the rectangle to set
+   */
 
-    public void setPointSW(Point p) {
-        this.pointSW.setX(p.getX());
-        this.pointSW.setY(p.getY());
-    }
+  public void setPointSW(Point p) {
+    this.pointSW = new Point(p);
+  }
 
-    // ===== Class methods ===== //
 
-    public int getPerimeter() {
-        return (this.width + this.height) * 2;
-    }
 
-    public int getArea() {
-        return this.width * this.height;
-    }
 
-    public void move(int deltaX, int deltaY) {
-        this.pointSW.move(deltaX, deltaY);
-    }
+  public int getPerimeter() {
+    return (this.width + this.height) * 2;
+  }
 
-    public boolean equals(RectangleA r) {
-        return (this.width == r.getWidth() && this.height == r.getHeight() && this.pointSW.equals(r.getPointSW()));
-    }
+  public int getArea() {
+    return this.width * this.height;
+  }
 
-    public double getDiagonalLength() {
-        return this.pointSW.distance(this.getPointNE());
-    }
+  public void move(int deltaX, int deltaY) {
+    this.pointSW.move(deltaX, deltaY);
+  }
 
-    public boolean isLarger(RectangleA other) {
-        return this.getArea() > other.getArea();
-    }
+  public boolean equals(RectangleA r) {
+    return (
+      this.width == r.getWidth() &&
+      this.height == r.getHeight() &&
+      this.pointSW.equals(r.getPointSW())
+    );
+  }
 
-    public Point getPointNE() {
+  public double getDiagonalLength() {
+    return this.pointSW.distance(this.getPointNE());
+  }
 
-        return new Point(this.pointSW.getX() + this.width, this.pointSW.getY() + this.height);
-        
-    }
+  public boolean isLarger(RectangleA other) {
+    return this.getArea() > other.getArea();
+  }
 
-    public void changeSides() {
-        int temp = this.width;
-        this.setWidth(this.height);
-        this.setHeight(temp);
-    }
+  public Point getPointNE() {
+    return new Point(
+      this.pointSW.getX() + this.width,
+      this.pointSW.getY() + this.height
+    );
+  }
 
-    public boolean isIn(RectangleA r) {
-        Point pointNE = this.getPointNE();
-        Point rNE = r.getPointNE();
-        Point rSW = r.getPointSW();
+  public void changeSides() {
+    int temp = this.width;
+    this.setWidth(this.height);
+    this.setHeight(temp);
+  }
 
-        return ((!this.pointSW.isLeft(rSW) && !this.pointSW.isUnder(rSW))
-                && (!pointNE.isRight(rNE) && !pointNE.isAbove(rNE)));
-    }
+  public boolean isIn(RectangleA r) {
+    Point pointNE = this.getPointNE();
+    Point rNE = r.getPointNE();
+    Point rSW = r.getPointSW();
 
-    public boolean overlap(RectangleA r) {
-        if (this.getPointNE().isLeft(r.getPointSW()) || r.getPointNE().isLeft(this.pointSW))
-            return false;
-        if (this.getPointNE().isUnder(r.getPointSW()) || r.getPointNE().isUnder(this.pointSW))
-            return false;
-        return true;
-    }
+    return (
+      (!this.pointSW.isLeft(rSW) && !this.pointSW.isUnder(rSW)) &&
+      (!pointNE.isRight(rNE) && !pointNE.isAbove(rNE))
+    );
+  }
 
-    public String toString() {
-        return ("Width=" + this.width + " Height=" + this.height + " PointSW" + this.pointSW);
-    }
+  public boolean overlap(RectangleA r) {
+    if (
+      this.getPointNE().isLeft(r.getPointSW()) ||
+      r.getPointNE().isLeft(this.pointSW)
+    ) return false;
+    if (
+      this.getPointNE().isUnder(r.getPointSW()) ||
+      r.getPointNE().isUnder(this.pointSW)
+    ) return false;
+    return true;
+  }
+
+
+  /**
+   * Returns a string representation of this rectangle.
+   *
+   * @return A string representation of RectangleA in the format: Width=w Height=h PointSW=(x, y)
+   */
+
+  public String toString() {
+    return ("Width=" + this.width + " Height=" + this.height + " PointSW" + this.pointSW);
+  }
 }
