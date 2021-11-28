@@ -8,7 +8,7 @@
 
 public class RectangleB {
 
-  final byte DEFAULT_SIDE_LENGTH = 1, MIN_SIDE_LENGTH = 0;
+  final byte DEFAULT_SIDE_LENGTH = 1;
   private Point pointSW;
   private Point pointNE;
 
@@ -27,8 +27,8 @@ public class RectangleB {
   /**
    * Constructs a new RectangleB with the specified South-Western vertex,
    * and the North-Eastern vertex based on the provided width and height.
-   * Checks if the accepted width and height are positive and if not, assigns
-   * their values to be 1.
+   * Checks if the accepted width and height are larger than the default side length,
+   * and if not - assigns their values to it.
    *
    * @param p      The South-Western vertex of the rectangle
    * @param width  The width of the rectangle
@@ -36,8 +36,8 @@ public class RectangleB {
    */
 
   public RectangleB(Point p, int w, int h) {
-    w = w < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : w;
-    h = h < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : h;
+    w = w < this.DEFAULT_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : w;
+    h = h < this.DEFAULT_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : h;
     this.pointSW = new Point(p);
     this.pointNE = new Point(p.getX() + w, p.getY() + h);
   }
@@ -161,7 +161,7 @@ public class RectangleB {
    */
 
   public void setWidth(int w) {
-    if (w >= this.MIN_SIDE_LENGTH) {
+    if (w >= this.DEFAULT_SIDE_LENGTH) {
       this.pointNE.setX(this.pointSW.getX() + w);
     }
   }
@@ -175,7 +175,7 @@ public class RectangleB {
    */
 
   public void setHeight(int h) {
-    if (h >= this.MIN_SIDE_LENGTH) {
+    if (h >= this.DEFAULT_SIDE_LENGTH) {
       this.pointNE.setY(this.pointSW.getY() + h);
     }
   }

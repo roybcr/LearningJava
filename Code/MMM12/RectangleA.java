@@ -8,7 +8,7 @@
 
 public class RectangleA {
 
-  final byte DEFAULT_SIDE_LENGTH = 1, MIN_SIDE_LENGTH = 0;
+  final byte DEFAULT_SIDE_LENGTH = 1;
   private int width;
   private int height;
   private Point pointSW;
@@ -29,8 +29,8 @@ public class RectangleA {
    * Constructs a new Rectangle with the specified width, height,
    * and a Point object that represents the coordinates of its South-Western
    * vertex.
-   * Checks if the accepted width and height are positive and if not, assigns
-   * their values to be 1.
+   * Checks if the accepted width and height are larger than the default side length,
+   * and if not - assigns their values to it.
    *
    * @param p      The South-Western vertex of the rectangle
    * @param width  The width of the rectangle
@@ -38,8 +38,8 @@ public class RectangleA {
    */
 
   public RectangleA(Point p, int w, int h) {
-    this.width = w < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : w;
-    this.height = h < this.MIN_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : h;
+    this.width = w < this.DEFAULT_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : w;
+    this.height = h < this.DEFAULT_SIDE_LENGTH ? this.DEFAULT_SIDE_LENGTH : h;
     this.pointSW = new Point(p);
   }
 
@@ -105,7 +105,7 @@ public class RectangleA {
    */
 
   public void setWidth(int w) {
-    this.width = w < this.MIN_SIDE_LENGTH ? this.width : w;
+    this.width = w < this.DEFAULT_SIDE_LENGTH ? this.width : w;
   }
 
   /**
@@ -117,7 +117,7 @@ public class RectangleA {
    */
 
   public void setHeight(int h) {
-    this.height = h < this.MIN_SIDE_LENGTH ? this.height : h;
+    this.height = h < this.DEFAULT_SIDE_LENGTH ? this.height : h;
   }
 
   /**
