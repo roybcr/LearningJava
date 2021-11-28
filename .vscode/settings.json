@@ -27,5 +27,6 @@
     "Code/MMM12"
   ],
   "java.format.settings.url": "eclipse-formatter.xml",
-  "todo-tree.tree.showBadges": true
+  "todo-tree.tree.showBadges": true,
+  "editor.defaultFormatter": "vscjava.vscode-maven"
 }
