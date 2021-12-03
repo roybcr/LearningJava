@@ -23,10 +23,13 @@
     "Units/Unit-4/Email/Main",
     "Units/Unit-4/Email/Main/Date",
     "Units/Unit-4/Email/Main/Message",
-    "Units/Unit-5/Fibonacci",
+    "Units/Unit-5/Loops/IsPrime",
     "Code/MMM12"
   ],
   "java.format.settings.url": "eclipse-formatter.xml",
   "todo-tree.tree.showBadges": true,
-  "editor.defaultFormatter": "vscjava.vscode-maven"
+  "editor.defaultFormatter": "vscjava.vscode-maven",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
 }
