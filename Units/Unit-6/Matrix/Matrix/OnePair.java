@@ -2,8 +2,8 @@
  * Given a matrix, return true if it has at least one pair of numbers
  * that sums to 1.
  * 
- * @Author (Roy Bachar)
- * @Version(09/12/21)
+ * @Author Roy Bachar
+ * @Version (09/12/21)
  */
 
 public class OnePair {
