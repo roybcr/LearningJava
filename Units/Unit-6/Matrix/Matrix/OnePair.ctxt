@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=OnePair
+comment0.text=\n\ Given\ a\ matrix,\ return\ true\ if\ it\ has\ at\ one\ pair\ of\ numbers\n\ which\ sums\ to\ 1.\n\ \n\ @Author\ (Roy\ Bachar)\n\ @Version(09/12/21)\n
+comment1.params=a
+comment1.target=boolean\ pair1(int[][])
+numComments=2

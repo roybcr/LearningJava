@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Lucky
+comment0.text=\n\ LeetCode\ 1394.\ \n\ Find\ Lucky\ Integer\ in\ an\ Array.\n\ \n\ A\ lucky\ integer\ is\ an\ integer\ which\ has\ \n\ a\ frequency\ in\ the\ array\ equal\ to\ its\ value.\ \n\ \n\ Return\ the\ largest\ lucky\ integer\ in\ the\ array.\ \n\ If\ there\ is\ no\ lucky\ integer\ return\ -1.\ \n\n\ @author\ (Roy\ Bachar)\n\ @version\ (08/12/21)\n
+comment1.params=arr
+comment1.target=int\ findLucky(int[])
+numComments=2

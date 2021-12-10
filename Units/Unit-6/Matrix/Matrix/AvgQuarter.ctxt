@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=AvgQuarter
+comment0.text=\n\ Given\ a\ Matrix,\ calculate\ the\ average\ of\ the\ sum\ \n\ of\ all\ members\ in\ the\ bottom\ left\ quarter\ quarter.\n\ \n\ For\ example\:\n\ In\ a\ matrix\ of\ size\ [3][6]\ ->\n\ \n\ the\ quarter\ will\ start\ at\ [1,\ 0]\ and\ end\ at\ [2,\ 2].\n\ -------------------------\n\ |\ o\ |\ o\ |\ o\ |\ o\ |\ o\ |\ o\ |\n\ -------------------------\n\ |\ x\ |\ x\ |\ x\ |\ o\ |\ o\ |\ o\ |\n\ -------------------------\n\ |\ x\ |\ x\ |\ x\ |\ o\ |\ o\ |\ o\ |\n\ -------------------------\n\ \n\ @Author\ Roy\ Bachar\n\ @Version\ (09/12/21)\n
+comment1.params=m
+comment1.target=double\ avg(int[][])
+numComments=2

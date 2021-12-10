@@ -24,7 +24,8 @@
     "Units/Unit-4/Email/Main/Date",
     "Units/Unit-4/Email/Main/Message",
     "Units/Unit-5/Loops/IsPrime",
-    "Code/MMM12"
+    "Code/MMM12",
+    "Units/Unit-6/Matrix/Matrix"
   ],
   "java.format.settings.url": "eclipse-formatter.xml",
   "todo-tree.tree.showBadges": true,
