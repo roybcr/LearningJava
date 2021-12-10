@@ -1,6 +1,6 @@
 /**
  * Given a Matrix, calculate the average of the sum 
- * of all members in the bottom left quarter quarter.
+ * of all members in the bottom left quarter.
  * 
  * For example:
  * In a matrix of size [3][6] ->
