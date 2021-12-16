@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Equilateral
+comment1.params=
+comment1.target=Equilateral()
+comment2.params=color\ base\ height
+comment2.target=Equilateral(java.lang.String,\ int,\ int)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

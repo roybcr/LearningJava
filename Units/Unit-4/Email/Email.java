@@ -1,4 +1,4 @@
-public class Main {
+public class Email {
     public static void main(String[] args) {
         
         Date date = new Date(2, 12, 1997);
