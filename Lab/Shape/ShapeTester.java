@@ -11,9 +11,10 @@ public class ShapeTester {
         t1.use();
         System.out.println(t1);
 
-        Triangle t2 = new Triangle();
+        Triangle t2 = new Equilateral();
         System.out.println(t2);
-
+        Equilateral r = (Equilateral) t2;
+        System.out.println("R: " + r);
         System.out.println(t2 instanceof Triangle);
         System.out.println(t2 instanceof Equilateral);
 
@@ -30,9 +31,21 @@ public class ShapeTester {
         Equilateral e = new Equilateral();
         e.use();
 
+        Shape g = new Equilateral();
+        Triangle f = (Triangle) g;
+        System.out.println(f.getClass());
+        System.out.println(f.hashCode());
+
         Equilateral q = new Equilateral();
         Triangle t = (Triangle) q;
         Shape ss = (Triangle) q;
+        Triangle b = q;
+        System.out.println("B: " + (b instanceof Equilateral));
+        Equilateral p = (Equilateral) f;
+        System.out.println(p.hashCode());
+
+        Shape u = p;
+        System.out.println(u);
 
         System.out.println(t.hashCode());
         System.out.println(ss.hashCode());
