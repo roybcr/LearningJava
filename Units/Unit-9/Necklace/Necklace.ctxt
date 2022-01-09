@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Necklace
+comment1.params=n
+comment1.target=int\ necklace(int)
+comment1.text=\n\ Necklace\ -\ A\ function\ for\ finding\ the\ amount\ of\ possibilities\ for\n\ creating\ unique\ necklaces\ of\ (n)\ centimeters,\ made\ of\ gold\ beads\ (1cm)\ &\n\ silver\ (2cm).\n
+numComments=2

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Strings
+comment1.params=n
+comment1.target=int\ strings(int)
+comment1.text=\n\ Given\ a\ number\ (n),\ return\ how\ many\ strings\ of\ length\ n,\n\ contain\ only\ letters\ between\ "a"\ ->\ "d".\n
+comment2.params=n\ s
+comment2.target=int\ strings(int,\ java.lang.String)
+numComments=3

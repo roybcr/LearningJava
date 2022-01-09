@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Sudoku
+comment0.text=\n\ This\ class\ represents\ a\ Sudoku\ board\ made\ of\n\ 9\ Square3x3\ objects.\n\n\ @author\ (Roy\ Bachar)\n\ @version\ (10.12.21)\n
+comment1.params=
+comment1.target=Sudoku()
+comment1.text=\n\ Constructs\ a\ 3x3\ array\ of\ Square3x3\ objects.\n
+comment2.params=square3x3Array
+comment2.target=Sudoku(Square3x3[][])
+comment2.text=\n\ Construct\ a\ 3x3\ array\ of\ Square3x3\ objects\ which\ are\ taken\ from\ the\ given\n\ array.\n
+comment3.params=
+comment3.target=boolean\ isValid()
+comment3.text=\n\ Validates\ the\ sudoku\ board\ by\ checking\n\ each\ Square3x3\ object\ independently,\n\ each\ board\ row,\n\ and\ each\ board\ column.\n\ \n\ @return\ true\ if\ the\ board\ is\ valid\ according\ to\ the\ rules\ of\ Sudoku,\ false\n\ \ \ \ \ \ \ \ \ otherwise.\n
+comment4.params=boardRow\ squareRow
+comment4.target=boolean\ checkBoardRow(int,\ int)
+comment5.params=boardCol\ squareCol
+comment5.target=boolean\ checkBoardCol(int,\ int)
+numComments=6

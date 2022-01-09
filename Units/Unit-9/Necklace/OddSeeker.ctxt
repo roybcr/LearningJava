@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=OddSeeker
+comment1.params=n
+comment1.target=int\ odd(int)
+comment2.params=n
+comment2.target=int\ betterOdd(int)
+comment3.params=
+comment3.target=void\ benchmarkOdd()
+comment4.params=
+comment4.target=void\ benchmarkBetterOdd()
+numComments=5

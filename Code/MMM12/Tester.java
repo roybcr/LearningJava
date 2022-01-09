@@ -219,7 +219,7 @@ public class Tester {
   }
 
   public static void runTests() {
-      
+
     int x = 0;
     int y = 0;
     int w = 0;
@@ -244,33 +244,45 @@ public class Tester {
 
   public static void runSingleRectTests(RectangleB r, Point sw, Point ne) {
 
-      Point p = RectangleBTester.createPointIntersection(sw, ne);
-      System.out.println("Changing sides based on the following :" + "\n\r" +
-            "1. current SW: " + r.getPointSW() + " Expected: " + sw + "\n\r" +
-            "2. current NE: " + r.getPointNE() + " Expected: " + ne + "\n\r" +
-            "3. Current Width: " + r.getWidth() + " Expected: " + ((int) RectangleBTester.getDistance(ne, p)) + "\n\r" +
-            "4. Current Height: " + r.getHeight() + " Expected: " + ((int) RectangleBTester.getDistance(sw, p)) + "\n\r" +
-            "5. Current Diagonal Length: " + r.getDiagonalLength() + " Expected: " + (RectangleBTester.getDistance(sw, ne)) + "\n\r" +
-            "6. Current Perimeter: " + r.getPerimeter() + " Expected: " + (RectangleBTester.getPerimeter(((int) RectangleBTester.getDistance(ne, p)), ((int) RectangleBTester.getDistance(sw, p)))) + "\n\r" +
-            "7. Current Area: " + r.getArea() + " Expected: " + (RectangleBTester.getArea(((int) RectangleBTester.getDistance(ne, p)), ((int) RectangleBTester.getDistance(sw, p)))) + "\n\r" +
-            "8. Current RectangleA: " + r + "\n\r");
-
+    Point p = RectangleBTester.createPointIntersection(sw, ne);
+    System.out.println("Changing sides based on the following :" + "\n\r" +
+        "1. current SW: " + r.getPointSW() + " Expected: " + sw + "\n\r" +
+        "2. current NE: " + r.getPointNE() + " Expected: " + ne + "\n\r" +
+        "3. Current Width: " + r.getWidth() + " Expected: " + ((int) RectangleBTester.getDistance(ne, p)) + "\n\r" +
+        "4. Current Height: " + r.getHeight() + " Expected: " + ((int) RectangleBTester.getDistance(sw, p)) + "\n\r" +
+        "5. Current Diagonal Length: " + r.getDiagonalLength() + " Expected: " + (RectangleBTester.getDistance(sw, ne))
+        + "\n\r" +
+        "6. Current Perimeter: " + r.getPerimeter() + " Expected: "
+        + (RectangleBTester.getPerimeter(((int) RectangleBTester.getDistance(ne, p)),
+            ((int) RectangleBTester.getDistance(sw, p))))
+        + "\n\r" +
+        "7. Current Area: " + r.getArea() + " Expected: "
+        + (RectangleBTester.getArea(((int) RectangleBTester.getDistance(ne, p)),
+            ((int) RectangleBTester.getDistance(sw, p))))
+        + "\n\r" +
+        "8. Current RectangleA: " + r + "\n\r");
 
     r.changeSides();
     Point testerNE = new Point(RectangleBTester.changePointSides(r.getPointSW(), r.getWidth(), r.getHeight()));
     Point o = RectangleBTester.createPointIntersection(sw, testerNE);
     System.out.println("Changing sides based on the following :" + "\n\r" +
-            "1. New SW: " + r.getPointSW() + " Expected: " + sw + "\n\r" +
-            "2. New NE: " + r.getPointNE() + " Expected: " + testerNE + "\n\r" +
-            "3. New Width: " + r.getWidth() + " Expected: " + ((int) RectangleBTester.getDistance(testerNE, o)) + "\n\r" +
-            "4. New Height: " + r.getHeight() + " Expected: " + ((int) RectangleBTester.getDistance(sw, o)) + "\n\r" +
-            "5. New Diagonal Length: " + r.getDiagonalLength() + " Expected: " + (RectangleBTester.getDistance(sw, testerNE)) + "\n\r" +
-            "6. New Perimeter: " + r.getPerimeter() + " Expected: " + (RectangleBTester.getPerimeter(((int) RectangleBTester.getDistance(testerNE, o)), ((int) RectangleBTester.getDistance(sw, o)))) + "\n\r" +
-            "7. New Area: " + r.getArea() + " Expected: " + (RectangleBTester.getArea(((int) RectangleBTester.getDistance(testerNE, o)), ((int) RectangleBTester.getDistance(sw, o)))) + "\n\r" +
-            "8. New RectangleA: " + r + "\n\r");
+        "1. New SW: " + r.getPointSW() + " Expected: " + sw + "\n\r" +
+        "2. New NE: " + r.getPointNE() + " Expected: " + testerNE + "\n\r" +
+        "3. New Width: " + r.getWidth() + " Expected: " + ((int) RectangleBTester.getDistance(testerNE, o)) + "\n\r" +
+        "4. New Height: " + r.getHeight() + " Expected: " + ((int) RectangleBTester.getDistance(sw, o)) + "\n\r" +
+        "5. New Diagonal Length: " + r.getDiagonalLength() + " Expected: "
+        + (RectangleBTester.getDistance(sw, testerNE)) + "\n\r" +
+        "6. New Perimeter: " + r.getPerimeter() + " Expected: "
+        + (RectangleBTester.getPerimeter(((int) RectangleBTester.getDistance(testerNE, o)),
+            ((int) RectangleBTester.getDistance(sw, o))))
+        + "\n\r" +
+        "7. New Area: " + r.getArea() + " Expected: "
+        + (RectangleBTester.getArea(((int) RectangleBTester.getDistance(testerNE, o)),
+            ((int) RectangleBTester.getDistance(sw, o))))
+        + "\n\r" +
+        "8. New RectangleA: " + r + "\n\r");
 
-    }
-
+  }
 
   public static void runPairPointTests(Point p1, Point p2, int x1, int y1, int x2, int y2) {
 
@@ -316,7 +328,6 @@ public class Tester {
     prnt(p2.distance(p1), new String("Distance from " + p2 + " to " + p1));
     exp(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)));
   }
-
 
   public static void runSinglePointTests(int x, int y) {
     Point p = new Point(x, y);
